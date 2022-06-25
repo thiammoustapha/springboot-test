@@ -14,10 +14,11 @@ public class User {
     @Id
     @GeneratedValue(strategy = GenerationType.IDENTITY)
     private long id;
+    @Column(unique = true)
     @NotNull(message = "Please provide your user name")
     private String username;
     @NotNull(message = "Please provide your birth date")
-    @BirthDate(message = "The birth date must be greater or equal than 18")
+    @BirthDate(message = "The birth date must be greater than or equal 18")
     @Past(message = "The date of birth must be in the past.")
     private Date birthDate;
     @NotNull(message = "Please provide your country of residence")

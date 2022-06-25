@@ -1,7 +1,7 @@
 package com.springboot.test.controller;
 
 import com.fasterxml.jackson.databind.ObjectMapper;
-import com.springboot.test.service.UserService;
+import com.springboot.test.service.UserServiceImpl;
 import org.junit.Test;
 import org.junit.runner.RunWith;
 import org.mockito.Mock;
@@ -36,7 +36,7 @@ public class UserControllerTest {
     private MockMvc mockMvc;
 
     @Mock
-    private UserService userService;
+    private UserServiceImpl userService;
 
     @Test
     public void registerAUserWithANullUserName() throws Exception {
@@ -80,7 +80,7 @@ public class UserControllerTest {
                 .andExpect(jsonPath("$.status", is(400)))
                 .andExpect(jsonPath("$.errors").isArray())
                 .andExpect(jsonPath("$.errors", hasSize(2)))
-                .andExpect(jsonPath("$.errors", hasItem("The birth date must be greater or equal than 18")))
+                .andExpect(jsonPath("$.errors", hasItem("The birth date must be greater than or equal 18")))
                 .andExpect(jsonPath("$.errors", hasItem("The country of residence must be France")));
     }
 

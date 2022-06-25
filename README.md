@@ -22,10 +22,7 @@ http://localhost:8080/register
         "gender": "M"
     }
 
-`username`, `birthDate` and `countryOfResidence` are required
-`phoneNumber` and `gender` are optional
-`birthDate` must be in the format "yyyy-MM-dd" and correspond to and adult user
-`countryOfResidence` must be the ISO code of France
+`username`, `birthDate` and `countryOfResidence` are required <br>`phoneNumber` and `gender` are optional <br>`birthDate` must be in the format "yyyy-MM-dd" and correspond to and adult user <br>`countryOfResidence` must be the ISO code of France
 
 ### Response
 
